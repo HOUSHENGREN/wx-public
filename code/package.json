@@ -4,8 +4,17 @@
   "description": "微信公众号开发",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server.js",
+    "dev": "npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.14.2",
+    "sha1": "^1.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
 }
