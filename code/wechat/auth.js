@@ -67,19 +67,18 @@ module.exports = () => {
                 })
                 // xml 转成 js 对象 【formatResult是对象】
                 const formatResult = await parse.parseStringPromise(xml)
-                const result = formatResult.xml || {} // 这一步容易忽略，需要拿出xml
+                const formated = formatResult.xml || {} // 这一步容易忽略，需要拿出xml
 
                 // 注意
                 // 1.这里不是 toUserName 而是 ToUserName。打印下 result 就知道。
                 // 2.这里发送方和接收方互换了。
-                const replyXML = reply(result.Content || '你好', result.ToUserName, result.FromUserName)
+                const replyXML = reply(formated.Content || '你好', formated.ToUserName, formated.FromUserName)
                 
                 console.log(formatResult.xml)
                 console.log(replyXML)
                 return ctx.body = replyXML
                 // return ctx.body = 'success'
             }
-    
         }
     }
 }
